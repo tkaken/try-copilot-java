@@ -1,11 +1,13 @@
 package com.calculator;
 
-public class Calculator 
-{
+public class Calculator {
 
-    public int add(int operand1, int operand2) 
+    public int add(int firstNumber, int secondNumber) 
     {
-        return operand1 + operand2;
+        if (firstNumber < 0 || secondNumber < 0) {
+            throw new IllegalArgumentException("Numbers must be non-negative");
+        }
+        return firstNumber + secondNumber;
     }
     
 }

@@ -23,10 +23,6 @@ public class CalculatorTest
         assertThat(this.calculator.add(2,3), is(5));
     }
 
-    @Test
-    void GivenTwoNegativeInts_WhenAdd_ThenProvideSum() 
-    {
-        assertThat(this.calculator.add(-2,-3), is(-5));
-    }
+
 
 }
