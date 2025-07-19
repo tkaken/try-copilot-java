@@ -58,7 +58,35 @@ public class CalculatorTest
         assertThat(this.calculator.subtract(3, -2), is(5));
     }
 
+    @Test
+    void GivenTwoPosInts_WhenDivide_ThenProvideFloatQuotient() {
+        assertThat(this.calculator.divide(6, 3), closeTo(2.0, 0.0001));
+    }
 
+    @Test
+    void GivenTwoNegInts_WhenDivide_ThenProvidePositiveFloatQuotient() {
+        assertThat(this.calculator.divide(-6, -3), closeTo(2.0, 0.0001));
+    }
+
+    @Test
+    void GivenPosAndNegInt_WhenDivide_ThenProvideNegativeFloatQuotient() {
+        assertThat(this.calculator.divide(6, -3), closeTo(-2.0, 0.0001));
+    }
+
+    @Test
+    void GivenNegAndPosInt_WhenDivide_ThenProvideNegativeFloatQuotient() {
+        assertThat(this.calculator.divide(-6, 3), closeTo(-2.0, 0.0001));
+    }
+
+    @Test
+    void GivenZeroNumerator_WhenDivide_ThenProvideZeroFloat() {
+        assertThat(this.calculator.divide(0, 3), closeTo(0.0, 0.0001));
+    }
+
+    @Test
+    void GivenInt_WhenDivideByZero_ThenThrowArithmeticException() {
+        assertThrows(ArithmeticException.class, () -> this.calculator.divide(3, 0));
+    }
 
 
 }

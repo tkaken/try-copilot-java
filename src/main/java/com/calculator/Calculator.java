@@ -8,4 +8,11 @@ public class Calculator {
     public int subtract(int minuend, int subtrahend) {
         return minuend - subtrahend;
     }
+
+    public double divide(int dividend, int divisor) {
+        if (0 == divisor) {
+            throw new ArithmeticException("Division by zero");
+        }
+        return (double) dividend / divisor;
+    }
 }
