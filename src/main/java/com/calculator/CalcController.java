@@ -30,4 +30,9 @@ public class CalcController {
             display.display("Error: Division by zero");
         }
     }
+
+    public void multiply(int multiplicand, int multiplier) {
+        int result = calculator.multiply(multiplicand, multiplier);
+        display.display(String.valueOf(result));
+    }
 }

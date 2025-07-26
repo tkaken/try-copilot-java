@@ -91,4 +91,30 @@ public class CalculatorTest
         this.calculator.divide(3, 0);
     }
 
+    @Test
+    public void GivenTwoPosInts_WhenMultiply_ThenProvideProduct() {
+        assertThat(this.calculator.multiply(4, 3), is(12));
+    }
+
+    @Test
+    public void GivenTwoNegInts_WhenMultiply_ThenProvidePositiveProduct() {
+        assertThat(this.calculator.multiply(-2, -3), is(6));
+    }
+
+    @Test
+    public void GivenPosAndNegInt_WhenMultiply_ThenProvideNegativeProduct() {
+        assertThat(this.calculator.multiply(4, -3), is(-12));
+    }
+
+    @Test
+    public void GivenNegAndPosInt_WhenMultiply_ThenProvideNegativeProduct() {
+        assertThat(this.calculator.multiply(-4, 3), is(-12));
+    }
+
+    @Test
+    public void GivenZeroMultiplier_WhenMultiply_ThenProvideZero() {
+        assertThat(this.calculator.multiply(4, 0), is(0));
+        assertThat(this.calculator.multiply(0, 3), is(0));
+    }
+
 }

@@ -109,4 +109,24 @@ public class CalcControllerTests
             .display(expectedErrorMessage);
     }
 
+    @Test
+    public void givenTwoIntegers_WhenTheMultiplyFunctionIsCalled_ThenProductIsDisplayed() 
+    {
+        int expectedMultiplicand = 4;
+        int expectedMultiplier = 3;
+        int expectedProduct = 12;
+        
+        //expectations
+        given(mockCalculator.multiply(expectedMultiplicand, expectedMultiplier))
+            .willReturn(expectedProduct);
+
+        //act
+        calcController.multiply(expectedMultiplicand, expectedMultiplier);
+        
+        //verification
+        then(mockDisplay)
+            .should(times(1))
+            .display(Integer.toString(expectedProduct));
+    }
+
 }

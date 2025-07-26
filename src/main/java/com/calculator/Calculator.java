@@ -17,4 +17,8 @@ public class Calculator implements Calculator_I {
         }
         return (double) dividend / divisor;
     }
+
+    public int multiply(int multiplicand, int multiplier) {
+        return multiplicand * multiplier;
+    }
 }
