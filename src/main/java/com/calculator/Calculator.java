@@ -1,6 +1,8 @@
 package com.calculator;
 
-public class Calculator {
+import api.calculator.Calculator_I;
+
+public class Calculator implements Calculator_I {
     public int add(int augend, int addend) {
         return augend + addend;
     }
